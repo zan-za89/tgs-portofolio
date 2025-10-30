@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Proyek - Razzan</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- TEMA CYBERPUNK/NEON (Ungu Gelap & Cyan) --- */
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* LATAR BELAKANG GELAP */
+            background: linear-gradient(135deg, #10172A 0%, #000A11 100%); 
+            color: #E2E8F0; /* Teks utama terang */
+            margin: 0;
+            padding: 0; 
+        }
+        
+        /* Kontainer Utama */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto; 
+            /* BACKGROUND GLASSMOPHISM GELAP */
+            background: rgba(18, 25, 45, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2); /* Bayangan Neon Cyan */
+            border: 1px solid rgba(0, 255, 255, 0.3); /* Border Cyan halus */
+            padding: 30px; 
+            backdrop-filter: blur(8px);
+            flex-grow: 1; 
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00FFFF; /* Judul Cyan Neon */
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); 
+        }
+
+        /* --- NAVBAR STYLING --- */
+        .navbar {
+            /* GRADASI NAVBAR GELAP-UNGU */
+            background: linear-gradient(90deg, #1A2038, #2D3A5D); 
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+            border-bottom: 1px solid #00FFFF;
+        }
+        .navbar-brand, .nav-link {
+            color: #E2E8F0 !important;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            color: #00FFFF !important; /* Hover Cyan Neon */
+            text-shadow: 0 0 5px #00FFFF;
+        }
+        .nav-link.active {
+            color: #00FFFF !important; 
+            border-bottom: 3px solid #00FFFF;
+        }
+
+        /* --- FILTER BUTTONS --- */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .btn-custom {
+            /* GRADASI UNGU GELAP KE BIRU */
+            background: linear-gradient(45deg, #4A00E0, #0077B6); 
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 0, 224, 0.5); /* Bayangan Ungu */
+        }
+
+        /* --- TABEL PORTOFOLIO --- */
+        .table {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.1);
+        }
+        .table th {
+            /* HEADER TABEL BIRU GELAP KE UNGU */
+            background: linear-gradient(45deg, #1C315E, #4A00E0); 
+            color: white;
+            border: none;
+            font-weight: bold;
+        }
+        .table td {
+            color: #E2E8F0; /* Teks konten tabel terang */
+            border-color: rgba(255, 255, 255, 0.1) !important; /* Garis pemisah halus */
+            vertical-align: middle;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .table tbody tr:hover {
+            background-color: rgba(0, 255, 255, 0.1); /* Hover Cyan terang */
+            transform: scale(1.01);
+        }
+
+        /* --- STATUS & LINK --- */
+        .status-selesai {
+            color: #00FF00; /* Hijau Neon */
+            font-weight: bold;
+        }
+        .status-belum {
+            color: #FF6347; /* Merah Tomat (Kontras) */
+            font-weight: bold;
+        }
+        .demo-link {
+            color: #00FFFF; /* Link Cyan Neon */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .demo-link:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 5px #00FFFF;
+        }
+        .project-icon {
+            margin-right: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: auto; 
+            padding: 0; 
+            width: 100%;
+            position: relative;
+            /* BACKGROUND FOOTER GELAP */
+            background: linear-gradient(135deg, #000A11 0%, #1A2038 100%); 
+            color: white;
+            overflow: hidden;
+        }
+
+        footer .main-footer-content {
+            padding: 40px 0;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.05); /* Sedikit transparan */
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+            backdrop-filter: blur(3px);
+        }
+
+        footer .sub-footer {
+            background-color: rgba(0, 0, 0, 0.4); 
+            padding: 10px 0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0, 255, 255, 0.3);
+            text-align: center;
+        }
+
+        footer .sub-footer a {
+            color: #00FFFF; /* Link ITPLN Cyan Neon */
+            font-weight: bold;
+            text-decoration: none;
+            text-shadow: 0 0 5px #00FFFF;
+        }
+        footer .sub-footer a:hover {
+            text-decoration: underline;
+            color: #E2E8F0;
+        }
+        
+        /* Tombol CTA Footer */
+        footer .btn-cta-custom { 
+            /* GRADASI CTA (misal: Ungu ke Cyan) */
+            background: linear-gradient(45deg, #4A00E0, #00FFFF); 
+            font-size: 1.1rem;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 6px 20px rgba(74, 0, 224, 0.4);
+            color: black; /* Kontras tinggi */
+            font-weight: 700;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        footer .btn-cta-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.6);
+        }
+        
+        /* Hapus styling untuk social-icons karena elemennya dihapus */
+        /* footer .social-icons { margin-top: 30px; } */ 
+        /* footer .social-icons a { color: #E2E8F0; ... } */
+
+        /* --- ANIMASI (TIDAK BERUBAH) --- */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-trophy me-2"></i> Portofolio Razzan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-rocket me-1"></i> My Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="form.html"><i class="fas fa-paper-plane me-1"></i> Request Project</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1><i class="fas fa-rocket project-icon"></i>Portofolio Proyek</h1>
+        
+        <div class="filters">
+            <button class="btn btn-custom" onclick="updateTable('filter', 'all')">Semua Proyek</button>
+            <button class="btn btn-custom" onclick="updateTable('filter', 'Selesai')">Selesai</button>
+            <button class="btn btn-custom" onclick="updateTable('filter', 'Belum')">Belum Selesai</button>
+            <button class="btn btn-custom" onclick="updateTable('sort', 'year')">Urutkan berdasarkan Tahun</button>
+            <button class="btn btn-custom" onclick="updateTable('sort', 'name')">Urutkan berdasarkan Nama</button>
+        </div>
+        
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered" id="portfolioTable">
+                <thead class="table-dark">
+                    <tr>
+                        <th><i class="fas fa-project-diagram"></i> Nama Proyek</th>
+                        <th><i class="fas fa-calendar-alt"></i> Tahun Pembuatan</th>
+                        <th><i class="fas fa-cogs"></i> Teknologi yang Digunakan</th>
+                        <th><i class="fas fa-check-circle"></i> Status</th>
+                        <th><i class="fas fa-external-link-alt"></i> Link Demo</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="main-footer-content text-center container-fluid">
+            
+        
+        <div class="sub-footer container-fluid">
+            <div class="container">
+                <span class="me-3">Hak Cipta &copy; 2025 Razzan.</span>
+                <span>Kunjungi: <a href="https://itpln.ac.id" target="_blank">Institut Teknologi PLN</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Data proyek (dinamis)
+        const projects = [
+            {
+                name: "NeuroLink AI: Chatbot Pintar untuk Layanan Pelanggan",
+                year: 2023,
+                tech: "Python, TensorFlow, NLP, Node.js",
+                status: "Selesai",
+                demo: "https://example.com/neurolink-demo"
+            },
+            {
+                name: "QuantumVision: Sistem Rekomendasi Berbasis Machine Learning",
+                year: 2022,
+                tech: "Python, Scikit-learn, Big Data (Hadoop), React",
+                status: "Selesai",
+                demo: "https://example.com/quantumvision-demo"
+            },
+            {
+                name: "EcoSphere IoT: Platform Smart City untuk Pengelolaan Energi",
+                year: 2024,
+                tech: "IoT (Arduino, Raspberry Pi), Cloud Computing (AWS), AI Analytics",
+                status: "Belum",
+                demo: null
+            },
+            {
+                name: "BlockChainVote: Sistem Voting Aman Berbasis Blockchain",
+                year: 2021,
+                tech: "Blockchain (Ethereum), Solidity, Web3.js, React",
+                status: "Selesai",
+                demo: "https://example.com/blockchainvote-demo"
+            },
+            {
+                name: "AuraGen AI: Generator Konten Kreatif dengan Deep Learning",
+                year: 2023,
+                tech: "Python, PyTorch, GANs, API Integration",
+                status: "Selesai",
+                demo: "https://example.com/auragen-demo"
+            },
+            {
+                name: "CyberGuard AI: Sistem Keamanan Siber Berbasis AI",
+                year: 2022,
+                tech: "Python, Machine Learning, Cybersecurity Tools, Cloud Security",
+                status: "Selesai",
+                demo: "https://example.com/cyberguard-demo"
+            },
+            {
+                name: "VirtualReality World: Platform VR untuk Edukasi",
+                year: 2023,
+                tech: "Unity, C#, VR Headsets, WebXR",
+                status: "Belum",
+                demo: null
+            },
+            {
+                name: "SmartHealth Monitor: Aplikasi IoT untuk Kesehatan",
+                year: 2021,
+                tech: "IoT Sensors, React Native, Firebase, AI Diagnostics",
+                status: "Selesai",
+                demo: "https://example.com/smarthealth-demo"
+            },
+            {
+                name: "CryptoTrade Bot: Bot Trading Kripto Otomatis",
+                year: 2024,
+                tech: "Python, Binance API, Machine Learning, Docker",
+                status: "Belum",
+                demo: null
+            },
+            {
+                name: "GreenEnergy Optimizer: Sistem Optimasi Energi Terbarukan",
+                year: 2022,
+                tech: "Python, Renewable Energy Models, IoT, Data Analytics",
+                status: "Selesai",
+                demo: "https://example.com/greenenergy-demo"
+            }
+        ];
+        
+        let currentFilter = 'all';
+        let currentSort = 'year'; 
+
+        function renderTable(data) {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+            
+            const fragment = document.createDocumentFragment();
+
+            data.forEach(project => {
+                const row = document.createElement('tr');
+                const statusClass = project.status === 'Selesai' ? 'status-selesai' : 'status-belum';
+                const demoLink = project.demo 
+                    ? `<a href="${project.demo}" target="_blank" class="demo-link"><i class="fas fa-link"></i> Demo</a>`
+                    : '<span class="text-secondary">-</span>';
+                
+                row.classList.add('fade-in-up');
+                row.innerHTML = `
+                    <td>${project.name}</td>
+                    <td>${project.year}</td>
+                    <td>${project.tech}</td>
+                    <td class="${statusClass}">${project.status}</td>
+                    <td>${demoLink}</td>
+                `;
+                fragment.appendChild(row);
+            });
+
+            tableBody.appendChild(fragment);
+        }
+
+        function updateTable(type, value) {
+            if (type === 'filter') {
+                currentFilter = value;
+            } else if (type === 'sort') {
+                currentSort = value;
+            }
+
+            let processedProjects = projects;
+            if (currentFilter !== 'all') {
+                processedProjects = projects.filter(project => project.status === currentFilter);
+            }
+
+            if (currentSort === 'year') {
+                processedProjects.sort((a, b) => b.year - a.year); 
+            } else if (currentSort === 'name') {
+                processedProjects.sort((a, b) => a.name.localeCompare(b.name));
+            }
+
+            renderTable(processedProjects);
+        }
+
+        // Render awal (initial load)
+        updateTable('sort', currentSort); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Request Project - Portofolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* PERBAIKAN PENTING UNTUK BODY */
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding: 0;
+            /* Latar belakang Hitam pekat */
+            background: #000000; 
+            /* UBAH properti flexbox agar item menyusun vertikal */
+            display: flex;
+            flex-direction: column; /* SUSUN ELEMEN SECARA VERTIKAL */
+            min-height: 100vh;
+            /* Warna teks utama: Biru Neon (Cyan) */
+            color: #00FFFF; 
+        }
+
+        /* --- STYLING NAVIGASI --- */
+        nav {
+            width: 100%;
+            background: rgba(0, 34, 51, 0.7);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #00FFFF;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 10px;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav a:hover {
+            color: #33FFFF;
+            text-shadow: 0 0 10px #00FFFF;
+        }
+        /* ------------------------- */
+
+        .container {
+            /* Mendorong container ke tengah, tetapi memberi ruang untuk footer */
+            margin: 50px auto; 
+            /* Gradien untuk Container: Hitam ke Biru Tua */
+            background: linear-gradient(135deg, #000a11 0%, #002233 100%); 
+            padding: 40px;
+            border-radius: 15px;
+            /* Bayangan Biru */
+            box-shadow: 0 15px 35px rgba(0, 255, 255, 0.1); 
+            width: 100%;
+            max-width: 550px;
+            backdrop-filter: blur(10px);
+            /* Border Biru Neon */
+            border: 2px solid #00FFFF; 
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        /* Keyframes animasi glow (Biru) */
+        @keyframes glow {
+            from { box-shadow: 0 15px 35px rgba(0, 255, 255, 0.1); }
+            to { box-shadow: 0 15px 35px rgba(0, 255, 255, 0.3); }
+        }
+
+        h1 {
+            text-align: center;
+            /* Warna Judul: Biru Neon */
+            color: #00FFFF; 
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 2em;
+            /* Efek teks glow biru */
+            text-shadow: 0 0 10px #00FFFF; 
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 400;
+            /* Warna Label: Biru Neon */
+            color: #00FFFF; 
+        }
+
+        /* ATURAN INPUT UMUM (text, email, select, textarea) */
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
+            /* Border: Biru Neon */
+            border: 2px solid #00FFFF; 
+            border-radius: 10px;
+            font-size: 16px;
+            /* Latar Belakang Input: Hitam transparan */
+            background: rgba(0, 0, 0, 0.8); 
+            /* Teks Input: Biru Neon */
+            color: #00FFFF; 
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        /* PERBAIKAN: Checkbox dan Radio Button harus memiliki lebar 'auto' */
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: auto; 
+            padding: 0; 
+            accent-color: #00FFFF; /* Warna Checkbox/Radio: Biru Neon */
+        }
+
+        /* Efek Fokus (Biru) */
+        input:focus, select:focus, textarea:focus {
+            border-color: #00FFFF;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Bayangan Fokus Biru */
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 400;
+            color: #00FFFF; 
+            margin-bottom: 0;
+        }
+
+        .checkbox-group {
+            margin-bottom: 25px;
+        }
+        
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px; 
+            cursor: pointer;
+            font-weight: 400;
+            color: #00FFFF; 
+            margin-bottom: 0; 
+        }
+
+        button {
+            padding: 15px;
+            /* Gradien untuk Tombol: Biru Tua ke Hitam */
+            background: linear-gradient(135deg, #002233 0%, #000a11 100%); 
+            /* Warna Teks Tombol: Biru Neon */
+            color: #00FFFF; 
+            /* Border: Biru Neon */
+            border: 2px solid #00FFFF; 
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Efek Hover Tombol (Bayangan Biru) */
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.4); 
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* --- CSS BARU UNTUK FOOTER --- */
+        footer {
+            width: 100%;
+            padding: 20px 0;
+            margin-top: auto; /* PENTING: Mendorong footer ke bawah dalam flex-container (body) */
+            text-align: center;
+            font-size: 0.9em;
+            /* Latar belakang footer: Biru tua transparan */
+            background: rgba(0, 34, 51, 0.5); 
+            /* Border atas: Garis Neon */
+            border-top: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        footer p {
+            margin: 0;
+            padding: 0 20px;
+            color: #99FFFF; /* Warna teks copyright lebih redup */
+        }
+
+        footer a {
+            color: #00FFFF; /* Warna link Neon */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #33FFFF;
+            text-shadow: 0 0 8px #00FFFF;
+        }
+        /* --- AKHIR CSS FOOTER --- */
+
+        /* MEDIA QUERIES UNTUK TAMPILAN MOBILE/DEVICE */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto; 
+                max-width: 90%; 
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .radio-group {
+                flex-direction: column;
+                gap: 10px; 
+            }
+            input, select, textarea, button {
+                font-size: 15px;
+                padding: 12px;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Beranda</a></li>
+            <li><a href="#">✍️ Request Project (Aktif)</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Request Project</h1>
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan alamat email Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="layanan">Jenis Layanan</label>
+                <select id="layanan" name="layanan" required>
+                    <option value="">Pilih jenis layanan</option>
+                    <option value="website">Pembuatan Website</option>
+                    <option value="mobile">Aplikasi Mobile</option>
+                    <option value="konsultasi">Konsultasi Teknologi</option>
+                    <option value="lainnya">Lainnya</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="deskripsi">Deskripsi Proyek</label>
+                <textarea id="deskripsi" name="deskripsi" placeholder="Jelaskan proyek Anda secara detail, termasuk fitur yang diinginkan dan deadline" required></textarea>
+            </div>
+
+            <div class="radio-group">
+                <label>Prioritas Proyek:</label>
+                <label><input type="radio" name="prioritas" value="rendah" required> Rendah</label>
+                <label><input type="radio" name="prioritas" value="sedang"> Sedang</label>
+                <label><input type="radio" name="prioritas" value="tinggi"> Tinggi</label>
+            </div>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="setuju" required> Saya setuju dengan syarat dan ketentuan serta kebijakan privasi</label>
+            </div>
+
+            <button type="submit">Kirim Request</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Hak Cipta &copy; 2025 Razzan. Kunjungi: <a href="https://itpln.ac.id" target="_blank">ITPLN</a></p>
+    </footer>
+    
+    <script>
+        // Validasi sederhana dengan pesan yang lebih user-friendly
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const nama = document.getElementById('nama').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const layanan = document.getElementById('layanan').value;
+            const deskripsi = document.getElementById('deskripsi').value.trim();
+            const setuju = document.querySelector('input[name="setuju"]').checked;
+
+            if (!nama) {
+                alert('Nama lengkap wajib diisi.');
+                e.preventDefault();
+                return;
+            }
+            if (!email || !/\S+@\S+\.\S+/.test(email)) {
+                alert('Email yang valid wajib diisi.');
+                e.preventDefault();
+                return;
+            }
+            if (!layanan) {
+                alert('Pilih jenis layanan.');
+                e.preventDefault();
+                return;
+            }
+            if (!deskripsi) {
+                alert('Deskripsi proyek wajib diisi.');
+                e.preventDefault();
+                return;
+            }
+            if (!setuju) {
+                alert('Anda harus menyetujui syarat dan ketentuan.');
+                e.preventDefault();
+                return;
+            }
+            // Jika validasi lolos, form akan disubmit
+        });
+    </script>
+</body>
+</html>

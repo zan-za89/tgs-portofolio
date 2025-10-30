@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Muh. Razzan Rezqy Pratama</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body class="text-main">
+
+    <div id="certificateModal" class="modal fixed inset-0 z-50 flex justify-center items-center">
+        <div class="modal-content relative p-8 rounded-xl shadow-2xl w-full max-w-4xl mx-4 my-8">
+            <div class="modal-header">
+                <h3 id="modalTitle" class="text-3xl font-extrabold accent-text-primary"></h3>
+                <button class="modal-close-btn" aria-label="Tutup Modal"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div id="modalBody" class="space-y-6 mt-4">
+                <div class="modal-description-section">
+                    <h4 class="font-semibold mb-2 text-lg text-main flex items-center"><i class="fas fa-info-circle mr-2 accent-text-primary"></i> Deskripsi</h4>
+                    <p id="modalDescriptionText" class="text-secondary leading-relaxed"></p>
+                </div>
+
+                <div class="modal-documentation-section mt-6 border-t pt-6 border-primary">
+                    <h4 class="font-semibold mb-4 text-lg text-main flex items-center"><i class="fas fa-images mr-2 accent-text-primary"></i> Dokumentasi Terkait</h4>
+                    <div id="modalImagesContainer" class="modal-images-scroll"> 
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <header class="header-section sticky top-0 z-20 shadow-md border-b border-primary" id="navbar" style="background-color: var(--bg-main);">
+        <div class="container mx-auto px-4 flex justify-between items-center py-4">
+            <h1 id="mainLogo" class="text-2xl font-extrabold accent-text-primary cursor-pointer">
+                <i class="fas fa-trophy text-xl mr-2"></i> My Portotfolio
+            </h1>
+            <nav class="space-x-6 font-medium hidden md:flex">
+                <a href="#hero-main" class="nav-link accent-text-primary font-semibold transition-colors hover:text-cyan-300 text-main">Beranda</a>
+                <a href="#about-detail" class="nav-link transition-colors hover:text-cyan-400 text-main">Tentang</a>
+                <a href="#projects-section" class="nav-link transition-colors hover:text-cyan-400 text-main">Pengalaman</a>
+                <a href="#education" class="nav-link transition-colors hover:text-cyan-400 text-main">Pendidikan</a>
+                <a href="#contact" class="nav-link transition-colors hover:text-cyan-400 text-main">Kontak</a>
+            </nav>
+            <button id="darkModeToggle" class="p-2 rounded-full bg-zinc-700 hover:bg-zinc-600 text-gray-300 transition">
+                <i class="fas fa-moon" id="darkModeIcon" style="color: var(--text-main);"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="initialHeroContainer">
+        <div id="hero-intro-content" class="fade-in-up" data-delay="0">
+            <div id="fullBodyContainer" class="transform transition duration-500">
+                <img src="My asset/WhatsApp Image 2025-10-27 at 21.10.48_4b5cd032.jpg" alt="Foto Non-Formal ">
+            </div>
+            <div id="initialAboutMeCard" class="p-8 rounded-xl module-card accent-border-cyan transform transition duration-500" style="max-width: 450px;">
+                <h4 class="text-2xl font-bold mb-3 text-cyan-400 flex items-center"><i class="fas fa-user-circle mr-2"></i> Muh. Razzan Rezqy Pratama</h4>
+                <p class="text-lg font-semibold text-main mb-4">Informatics Engineering Student</p>
+                <ul class="space-y-2 text-sm text-main">
+                    <li><strong class="text-main">Status:</strong> Mahasiswa Aktif S1 Teknik Informatika ITPLN.</li>
+                    <li><strong class="text-main">Fokus:</strong> Big Data Engineering & Riset Ilmiah.</li>
+                    <li class="mt-3 p-2 border-l-4 border-cyan-400" style="background-color: var(--border-color); color: var(--text-secondary);">"be better than yesterday"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content-wrapper">
+        <main class="container mx-auto px-4 py-16 pt-0">
+
+            <section id="hero-main" class="pt-5 pb-10 text-center fade-in-up"> 
+                <div id="profilePicture" class="w-36 h-36 md:w-40 md:h-40 mb-4 mx-auto cursor-default group"> 
+                    <img src="My asset/Desain tanpa judul (1).jpg" alt="Foto Profil Muh. Razzan" class="w-full h-full object-cover rounded-full shadow-md border-4 border-accent-blue">
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-main mb-2 leading-tight">
+                    Muh. Razzan Rezqy Pratama
+                </h2>
+                <p id="typingText" class="text-main max-w-xl mx-auto min-h-[4rem] text-lg font-mono pr-1"></p>
+            </section>
+            
+            <section id="terminal-section" class="max-w-5xl mx-auto mb-16 fade-in-up">
+                <h3 class="text-2xl font-bold mb-6 text-center border-b pb-3 border-primary text-main">Terminal Command Line</h3>
+                <div id="terminal" class="mx-auto">
+                    <div class="p-2 border-b border-primary flex justify-between items-center" style="background-color: rgba(255,255,255,0.05);">
+                        <span class="text-sm font-semibold">razzan@portfolio:~ $</span>
+                        <span class="text-xs">Type 'help' and press Enter</span>
+                    </div>
+                    <div id="terminalOutput" class="terminal-output text-xs">
+                        <span style="color:#00ff41;">System Booted. Welcome to Razzan's Core.</span><br/>
+                        <span style="color:#00ff41;">Last login: Sun Oct 23 02:00:00 on tty1</span><br/>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="pl-2 font-semibold text-xs text-cyan-400">guest@user &gt;</span>
+                        <input type="text" id="terminalInput" class="flex-grow font-mono text-xs" autofocus autocomplete="off">
+                    </div>
+                </div>
+            </section>
+            <section id="about-detail" class="max-w-5xl mx-auto mb-16 fade-in-up">
+                <h3 class="text-2xl font-bold mb-8 text-center border-b pb-3 border-primary text-main">Detail Keahlian & Sosial</h3>
+                
+                <div class="scroll-container-x">
+                    
+                    <div class="slide-item p-6 rounded-xl module-card accent-border-cyan">
+                        <h4 class="text-xl font-bold mb-4 text-cyan-400 flex items-center modern-heading"><i class="fas fa-code mr-2"></i> Hard Skills</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Python </span>
+                            <span class="skill-tag">Microsoft Office</span>
+                            <span class="skill-tag">SQL/NoSQL</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Web Dev </span>
+                            <span class="skill-tag">Data Visualization</span>
+                        </div>
+                    </div>
+
+                    <div class="slide-item p-6 rounded-xl module-card accent-border-cyan">
+                        <h4 class="text-xl font-bold mb-4 text-cyan-400 flex items-center modern-heading"><i class="fas fa-users mr-2"></i> Soft Skills</h4>
+                        <div class="flex flex-wrap gap-2"> 
+                            <span class="skill-tag">Riset Ilmiah</span>
+                            <span class="skill-tag">Kerja Tim Efektif</span>
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Manajemen Waktu</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Public Speaking</span>
+                        </div>
+                    </div>
+                    
+                    <div class="slide-item p-6 rounded-xl module-card accent-border-cyan">
+                        <h4 class="text-xl font-bold mb-4 text-cyan-400 flex items-center modern-heading"><i class="fas fa-globe-asia mr-2"></i> My Adventure</h4>
+                        <div class="space-y-3 text-sm">
+                            <p class="text-main font-semibold clickable-item cursor-pointer adventure-item p-2 rounded-md hover:bg-opacity-50" 
+                                data-title="Sulawesi Selatan" 
+                                data-description="i love this place"
+                                data-images='["My asset/image.png", "My asset/IMG_20230621_055028.jpg", "My asset/IMG_20231007_075346.jpg"]'><br>
+                                <data-></data-images>
+                                <i class="fas fa-compass text-secondary mr-2"></i> Sulawesi Selatan
+                            </p>
+                            <p class="text-main font-semibold clickable-item cursor-pointer adventure-item p-2 rounded-md hover:bg-opacity-50" 
+                                data-title="Jawa Barat (Healing)" 
+                                data-description=" Best Place to heal."
+                                data-images='["My asset/WhatsApp Image 2025-10-21 at 12.42.52_6cce49b1.jpg", "My asset/WhatsApp Image 2025-10-23 at 18.30.39_0ab26c28.jpg","My asset/WhatsApp Image 2025-10-23 at 18.31.42_d4bd57e7.jpg", "My asset/WhatsApp Image 2025-10-23 at 18.37.34_56bd0f33.jpg", "My asset/WhatsApp Image 2025-10-23 at 18.37.36_a8dcf83d.jpg","My asset/IMG_20240831_124531.jpg"]'>
+                                <i class="fas fa-compass text-secondary mr-2"></i> Jawa Barat
+                            </p>
+                            <p class="text-main font-semibold clickable-item cursor-pointer adventure-item p-2 rounded-md hover:bg-opacity-50" 
+                                data-title="Jakarta (Studi & Bisnis)" 
+                                data-description="Jakarta is the center of Indonesia's economic, political, and cultural activities. Officially known as the Special Capital Region (DKI) of Jakarta, the city is a dynamic and the largest metropolitan city in Indonesia"
+                                data-images='["My asset/JAKARTA/WhatsApp Image 2025-10-21 at 12.42.49_594fab46.jpg","My asset/JAKARTA/WhatsApp Image 2025-10-21 at 12.42.52_1253b180.jpg","My asset/JAKARTA/WhatsApp Image 2025-10-21 at 12.42.53_f5e719d4.jpg", "My asset/IMG_20250501_192231.jpg"]'>
+                                <i class="fas fa-compass text-secondary mr-2"></i> Jakarta
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </section>
+
+            <section class="max-w-5xl mx-auto pt-10 pb-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center fade-in-up">
+                <h3 class="col-span-full text-2xl font-bold mb-6 text-main">Statistik</h3>
+                
+                <div class="p-4 rounded-xl module-card accent-border-green">
+                    <p class="text-4xl font-bold text-cyan-400 counter" id="stat-proyek">0</p>
+                    <p class="text-sm text-secondary">writing and research</p>
+                </div>
+                
+                <div class="p-4 rounded-xl module-card accent-border-green">
+                    <p class="text-4xl font-bold text-cyan-400 counter" id="stat-sertifikat">1</p> <p class="text-sm text-secondary">Sertifikat dan Event</p>
+                </div>
+                
+                <div class="p-4 rounded-xl module-card accent-border-green">
+                    <p class="text-4xl font-bold text-cyan-400 counter" id="stat-prestasi">1</p>
+                    <p class="text-sm text-secondary">Prestasi Kompetisi</p>
+                </div>
+                
+                <div class="p-4 rounded-xl module-card accent-border-green">
+                    <p class="text-4xl font-bold text-cyan-400 counter" id="stat-organisasi">4</p>
+                    <p class="text-sm text-secondary">Organisasi (Ex/Current)</p>
+                </div>
+            </section>
+
+
+            <section class="max-w-5xl mx-auto mb-8 fade-in-up">
+                <h3 class="text-2xl font-bold mb-4 text-main">Filter Pengalaman</h3>
+                <div id="filterTags" class="flex flex-wrap gap-3">
+                    <button class="filter-button text-sm px-4 py-2 rounded-full active" data-filter="all">Semua</button>
+                    <button class="filter-button text-sm px-4 py-2 rounded-full" data-filter="sertifikat">Sertifikasi</button>
+                    <button class="filter-button text-sm px-4 py-2 rounded-full" data-filter="prestasi">Prestasi</button>
+                    <button class="filter-button text-sm px-4 py-2 rounded-full" data-filter="event">Event</button>
+                    <button class="filter-button text-sm px-4 py-2 rounded-full" data-filter="riset">Riset Ilmiah</button>
+                </div>
+            </section>
+
+            <section id="projects-section" class="max-w-5xl mx-auto py-16 pt-0 fade-in-up">
+                <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="project-card p-4 rounded-xl shadow hover:shadow-lg transition cursor-pointer clickable-item module-card accent-border-purple"
+                        data-type="event" data-tags="event data cloud"
+                        data-title="Setup & Maintenance Big Data Cluster (Hadoop)"
+                        data-description="Implementasi cluster Hadoop 3.x pada environment virtualized untuk pelatihan internal IRC ITPLN. Fokus pada HDFS dan YARN configuration."
+                        data-images='["My asset/Sertif/google.png", "https://via.placeholder.com/400x250/1d4ed8/ffffff?text=HDFS+Architecture"]'>
+                        <i class="fas fa-cloud text-3xl text-indigo-400 mb-4"></i>
+                        <h4 class="font-semibold text-main">Google Cloud Roadshow</h4>
+                        <p class="text-sm text-secondary">Participants</p>
+                    </div>
+
+                    <div class="project-card p-4 rounded-xl shadow hover:shadow-lg transition cursor-pointer clickable-item module-card accent-border-purple"
+                        data-type="prestasi" data-tags="prestasi"
+                        data-title="BRONZE AWARD SINGAPORE MATH COMPETITION 2022"
+                        data-description="Won a bronze medal in the mathematics competition at the 2022 Singapore Olympiad."
+                        data-images='["My asset/Sertif/Screenshot 2025-10-23 143814.png","My asset/IMG_20230225_130951.jpg"]'>
+                        <i class="fas fa-trophy cert-icon-bg mb-3" style="background: linear-gradient(45deg, #fbb03b, #ffda73);"></i>
+                        <h4 class="font-semibold text-main">Bronze Award SIMC</h4>
+                        <p class="text-sm text-secondary">International</p>
+                    </div>
+
+                    <div class="project-card p-4 rounded-xl shadow hover:shadow-lg transition cursor-pointer clickable-item module-card accent-border-purple"
+                        data-type="riset" data-tags="prestasi"
+                        data-title="BOPOSI"
+                        data-description="An event held by the Psychology Study Program at Ciputra University, Surabaya in 2022. This event was held at the national level and was attended by high school students throughout Indonesia."
+                        data-images='["My asset/Sertif/image.png", "https://via.placeholder.com/400x250/047857/ffffff?text=Sensor+Data+Collection"]'>
+                        <i class="fas fa-brain text-4xl text-indigo-400 mb-4"></i>
+                        <h4 class="font-semibold text-main">TOP 10 Esai Populer 2022</h4>
+                        <p class="text-sm text-secondary">Nasional</p>
+                    </div>
+                    <div class="project-card p-4 rounded-xl shadow hover:shadow-lg transition cursor-pointer clickable-item module-card accent-border-purple"
+                        data-type="riset" data-tags="proyek riset, prestasi"
+                        data-title="kresna"
+                        data-description="The National Creation and Innovation Research Competition, or KRESNA, has reached its third year with great enthusiasm! Organized by Nanoedu, under the auspices of Nano Center Indonesia, KRESNA continues to be a competitive platform focusing on Social Sciences and Humanities (ISH) and Mathematics, Science, and Technology (MST) research for participants from various region."
+                        data-images='["My asset/Sertif/Kresna.png", "https://via.placeholder.com/400x250/047857/ffffff?text=Sensor+Data+Collection"]'>
+                        <i class="fas fa-brain text-4xl text-indigo-400 mb-4"></i>
+                        <h4 class="font-semibold text-main">Finalis Kresnas</h4>
+                        <p class="text-sm text-secondary">Nasional</p>
+                    </div>
+
+                    <div class="project-card p-4 rounded-xl shadow hover:shadow-lg transition cursor-pointer clickable-item module-card accent-border-purple"
+                        data-type="sertifikat" data-tags="sertifikat"
+                        data-title="Sertifikasi BEES"
+                        data-description="take a basic English test consisting of 100 questions and must answer at least 60 questions to pass this certification.."
+                        data-images='["My asset/Sertif/BEES.png"]'>
+                        <i class="fas fa-globe cert-icon-bg mb-3" style="background: linear-gradient(45deg, #29283d, #8b5cf6);"></i>
+                        <h4 class="font-semibold text-main">BEES</h4>
+                        <p class="text-sm text-secondary">Sertifikasi basic english</p>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <section id="education" class="max-w-5xl mx-auto py-16 fade-in-up">
+                <h3 class="text-2xl font-bold mb-8 text-center border-b pb-3 border-primary text-main">Riwayat Pendidikan & Organisasi</h3>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    
+                    <div class="module-card fade-in-up accent-border-cyan">
+                        <div class="p-6">
+                            <h2 class="text-xl font-semibold mb-3 text-cyan-400 flex items-center"><i class="fas fa-graduation-cap mr-2"></i> Pendidikan Formal</h2>
+                            <div class="timeline-box no-scroll-content space-y-4"> 
+                                <div class="clickable-item p-3 rounded-lg hover:bg-zinc-700 accent-border-cyan"
+                                    data-title="Institut Teknologi PLN (S1 Informatika)" 
+                                    data-description="Fokus studi pada Big Data, Pengembangan Perangkat Lunak, dan Jaringan Komputer. IPK: 3.85 (sementara). Aktif di riset kampus dan komunitas IT." 
+                                    data-images='["itpln-logo.png", "itpln-class-1.jpg", "itpln-lab-2.jpg", "itpln-campus.jpg"]'>
+                                    <span class="font-bold block text-base text-main">IT PLN (2024 - Sekarang)</span>
+                                    <p class="text-xs text-secondary">S1 Teknik Informatika | Big Data & RPL.</p>
+                                </div>
+                                <div class="clickable-item p-3 rounded-lg hover:bg-zinc-700 accent-border-cyan"
+                                    data-title="MAN 2 Kota Makassar (MA)" 
+                                    data-description="Lulusan jurusan IPA. Aktif di Kelompok Ilmiah Remaja (KIR)." 
+                                    data-images='["My asset/IMG_20240117_155014.jpg", "My asset/WhatsApp Image 2025-10-18 at 00.08.10_2f1dadc9.jpg", "My asset/IMG_20230929_181213.jpg","My asset/WhatsApp Image 2025-10-18 at 00.03.34_540ffcd3.jpg"]'>
+                                    <span class="font-bold block text-base text-main">MAN 2 Kota Makassar (2021 - 2024)</span>
+                                    <p class="text-xs text-secondary">Math and scientist</p>
+                                </div>
+                                <div class="clickable-item p-3 rounded-lg hover:bg-zinc-700 accent-border-cyan"
+                                    data-title="SMP IT Al-Fityan Gowa" 
+                                    data-description="Mendapatkan dasar yang kuat dalam kepemimpinan dan nilai-nilai Islami. Pernah menjabat sebagai Bagian dari DIV Rohis." 
+                                    data-images='["alfityan-logo.png", "osis-smp-photo.jpg"]'>
+                                    <span class="font-bold block text-base text-main">SMP IT Al-Fityan Gowa (2018 - 2021)</span>
+                                    <p class="text-xs text-secondary">Junior High School</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module-card fade-in-up accent-border-green">
+                        <div class="p-6">
+                            <h2 class="text-xl font-semibold mb-3 text-green-400 flex items-center"><i class="fas fa-sitemap mr-2"></i> Keterlibatan Organisasi</h2>
+                            <div class="timeline-box no-scroll-content space-y-4"> 
+                                <div class="clickable-item p-3 rounded-lg hover:bg-zinc-700 accent-border-green" 
+                                    data-title="IRC ITPLN" 
+                                    data-description="I play a role as a member of the Mechanic Team in designing and building a robot. In addition to the IRC structure, I also play a role in the Creative Division, which is responsible for creating content, marketing, and documenting IRC activities | Periode: 1 Tahun." 
+                                    data-type="organisasi" 
+                                    data-images='["My asset/WhatsApp Image 2025-10-27 at 20.58.33_66351c88.jpg","My asset/WhatsApp Image 2025-10-07 at 20.57.59_92b13a74.jpg"]'>
+                                    <span class="font-semibold block text-main">IRC ITPLN (2025 - Sekarang)</span>
+                                    <span class="text-sm text-secondary">Intelligent Robotic Club.</span>
+                                </div>
+                                <div class="clickable-item p-3 rounded-lg hover:bg-zinc-700 accent-border-green" 
+                                    data-title="Gerakan Sahabat Mengajar (GSM)" 
+                                    data-description="Relawan pengajar dan panitia divisi perlengkapan untuk kegiatan edukasi di daerah terpencil. Periode: 6 Bulan." 
+                                    data-type="organisasi" data-images='["gsm-logo.png"]'>
+                                    <span class="font-semibold block text-main">Gerakan Sahabat Mengajar</span>
+                                    <span class="text-sm text-secondary">Pengabdian Masyarakat & Edukasi Sosial.</span>
+                                </div>
+                                <div class="clickable-item p-3 rounded-lg hover:bg-zinc-700 accent-border-green" 
+                                    data-title="KIR MAN 2 Makassar" 
+                                    data-description="Sekretaris Divisi Ilmiah. Bertanggung jawab atas dokumentasi dan koordinasi lomba riset nasional. Periode: 2 Tahun." 
+                                    data-type="organisasi" data-images='["kir-logo.png"]'>
+                                    <span class="font-semibold block text-main">KIR MAN 2 Makassar</span>
+                                    <span class="text-sm text-secondary">Kelompok Ilmiah Remaja (2022-2023).</span>
+                                </div>
+                                <div class="clickable-item p-3 rounded-lg hover:bg-zinc-700 accent-border-green" 
+                                    data-title="OSIS SMP IT Al-Fityan" 
+                                    data-description="Ketua Seksi Olahraga. Bertanggung jawab mengorganisir kompetisi futsal dan lari tingkat sekolah. Periode: 1 Tahun." 
+                                    data-type="organisasi" data-images='["osis-logo.png"]'>
+                                    <span class="font-semibold block text-main">OSIS SMP IT Al-Fityan</span>
+                                    <span class="text-sm text-secondary">Seksi Olahraga (2020-2021).</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="social-media-section" class="max-w-5xl mx-auto mb-16 fade-in-up">
+                <div class="module-card accent-border-cyan p-6">
+                    <h4 class="text-xl font-bold mb-4 text-cyan-400 flex items-center modern-heading"><i class="fas fa-share-alt mr-2"></i> Social Media</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                        
+                        <a href="https://www.linkedin.com/in/muh-razzan-rezqy-pratama" target="_blank" class="text-sm p-3 text-center rounded-lg font-semibold flex items-center justify-center bg-blue-600 text-white hover:bg-blue-700 social-link-item">
+                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        </a>
+                        
+                        <a href="https://www.instagram.com/muh.razzan.06" target="_blank" class="text-sm p-3 text-center rounded-lg font-semibold flex items-center justify-center text-white social-link-item" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">
+                            <i class="fab fa-instagram mr-2"></i> Instagram
+                        </a>
+                        
+                        <a href="https://www.tiktok.com/@zanology_" target="_blank" class="text-sm p-3 text-center rounded-lg font-semibold flex items-center justify-center bg-black text-white hover:bg-gray-900 social-link-item">
+                            <i class="fab fa-tiktok mr-2"></i> TikTok
+                        </a>
+                        
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+    <footer class="text-center py-6 border-t text-sm border-primary" id="contact" style="background-color: var(--bg-card);">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold mb-4 text-main fade-in-up">Let's see My Project</h3>
+
+            <p class="text-secondary mb-6">Klik Tombol dibawah ini untuk melihat project kami.</p>
+            
+            <a href="myproject.html" class="inline-block py-3 px-8 bg-cyan-500 text-black font-extrabold rounded-full shadow-lg hover:bg-cyan-400 transition duration-300 cta-button">
+                My Project <i class="fas fa-paper-plane ml-2"></i>
+            </a>
+
+            <p class="text-text-main text-sm">
+    Kunjungi: 
+    <a href="https://itpln.ac.id" target="_blank" class="font-bold text-accent-primary hover:text-cyan-300 transition duration-300">
+        Institut Teknologi PLN
+    </a>
+</p>
+        </div>
+    </footer>
+
+    <script src="java1.js"></script>>
+</body>
+</html>
